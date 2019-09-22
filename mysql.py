@@ -2,17 +2,19 @@
 
 import sys
 import pymysql.cursors
+import yaml
 
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
-host = "127.0.0.1"
-user = "user"
-password = "password"
-dbName = "db_name"
-oldString = "old string"
-newString = "new string"
-tableList = []
-excludeTableList = ["table_1", "table_2"]
-
+host = cfg['mysql']['host']
+user = cfg['mysql']['user']
+password = cfg['mysql']['password']
+dbName = cfg['mysql']['db']
+oldString = "old string"  # 舊字串
+newString = "new string"  # 新字串
+tableList = []  # 空陣列代表全部，如果有輸入個別資料表，則處理個別資料表
+excludeTableList = ["table_1", "table_2"]  # 要排除的資料表
 
 # Connect to the database
 connection = pymysql.connect(host=host,
@@ -41,18 +43,20 @@ def get_columns(table_name):
 
 
 def update(table_name, column_list):
-    with connection.cursor() as cursor:
-        for column in column_list:
-            sql = "UPDATE " + table_name + " SET " + column + " = REPLACE(" + column + ", %s, %s)"
-            cursor.execute(sql, (oldString, newString))
+    for column in column_list:
+        sql = "UPDATE " + table_name + " SET " + column + " = REPLACE(" + column + ", %s, %s)"
+        cursor.execute(sql, (oldString, newString))
     connection.commit()
 
 
 def main():
-    get_tables()
+    if len(tableList) == 0:
+        get_tables()
     print("all tables :", tableList)
+
     for excludeTable in excludeTableList:
-        tableList.remove(excludeTable)
+        if excludeTable in tableList:
+            tableList.remove(excludeTable)
 
     if len(tableList) > 0:
         for table_name in tableList:
