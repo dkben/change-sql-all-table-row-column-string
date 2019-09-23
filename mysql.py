@@ -11,10 +11,10 @@ host = cfg['mysql']['host']
 user = cfg['mysql']['user']
 password = cfg['mysql']['password']
 dbName = cfg['mysql']['db']
-oldString = "old string"  # 舊字串
-newString = "new string"  # 新字串
-tableList = []  # 空陣列代表全部，如果有輸入個別資料表，則處理個別資料表
-excludeTableList = ["table_1", "table_2"]  # 要排除的資料表
+oldString = cfg['setup']['old_string']
+newString = cfg['setup']['new_string']
+tableList = cfg['setup']['table_list']
+excludeTableList = cfg['setup']['exclude_table_list']
 
 # Connect to the database
 connection = pymysql.connect(host=host,

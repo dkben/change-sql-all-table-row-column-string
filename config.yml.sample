@@ -3,6 +3,18 @@ mysql:
     user: root
     password: password
     db: db_name
+setup:
+    # 舊字串
+    old_string: old string
+    # 新字串
+    new_string: new string
+    # 針對的資料表：空陣列代表全部資料表，陣列格式代表針對某幾張資料表
+    table_list: []
+    # 要排除的資料表
+    exclude_table_list:
+        - table_1
+        - table_2
+        - table_3
 other:
     preprocessing_queue:
         - preprocessing.scale_and_center
