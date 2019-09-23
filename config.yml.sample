@@ -10,7 +10,7 @@ setup:
     new_string: new string
     # 針對的資料表：空陣列代表全部資料表，陣列格式代表針對某幾張資料表
     table_list: []
-    # 要排除的資料表
+    # 要排除的資料表：如果空陣列 []，如果有值使用 - 值1 (換行) - 值2
     exclude_table_list:
         - table_1
         - table_2
