@@ -23,16 +23,16 @@ python 3.7
 
 1. 例如要將資料庫中所有 varchar, text 中的「韓語」置換成「韓國語」
    
-   ![image](https://drive.google.com/uc?export=view&id=14H-KIV6EhW3Gb-9iOpOl_jvEpg6yng7w)
+   ![image](Readme/001.png)
 
 2. 在 yaml 設定檔中設定舊字串和新字串
    
-   ![image](https://drive.google.com/uc?export=view&id=1sagxinTymJIv18AJrPqNHmSjO212OcU8)
+   ![image](Readme/002.png)
 
 3. 執行轉換程式
    
-   ![image](https://drive.google.com/uc?export=view&id=1VgfP7G7jdRTIKBdlv8nTLvy5LOSvRasj)
+   ![image](Readme/003.png)
 
 4. 成功將文字「韓語」置換成「韓國語」 
    
-   ![image](https://drive.google.com/uc?export=view&id=1k4LlY272_I3LV7E-Jv8z-he7SJSWW8Tf)
+   ![image](Readme/004.png)
