@@ -87,7 +87,6 @@ def check_update():
             input('已經是最新版...按任意鍵繼續...')
 
 
-
 if __name__ == '__main__':
     try:
         with connection.cursor() as cursor:

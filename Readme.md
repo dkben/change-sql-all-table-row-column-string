@@ -29,7 +29,9 @@ python 3.7
    
    ![image](Readme/002.png)
 
-3. 執行轉換程式
+3. 視安裝環境而定，執行
+
+   `python3 run.py` 或 `python run.py` 
    
    ![image](Readme/003.png)
 
